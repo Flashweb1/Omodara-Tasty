@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef's Specials | OMODARA TASTY</title>
+    <meta name="description"
+        content="Discover our chef's daily specials - premium dishes crafted with passion and the finest ingredients.">
+    <meta name="keywords" content="OMODARA TASTY specials, chef specials, daily restaurant deals, Lagos food deals, premium food combo">
+    <meta name="author" content="OMODARA TASTY">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Chef's Specials | OMODARA TASTY">
+    <meta property="og:description" content="Discover our chef's daily specials - premium dishes crafted with passion and the finest ingredients.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omodaratasty.ng/specials.html">
+    <meta property="og:image" content="./img/logo-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chef's Specials | OMODARA TASTY">
+    <meta name="twitter:description" content="Discover our chef's daily specials.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "OMODARA TASTY",
+        "image": "./img/logo-icon.png",
+        "url": "https://omodaratasty.ng",
+        "telephone": "+2349079490452",
+        "servesCuisine": ["Nigerian", "Intercontinental", "Continental"],
+        "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+        "openingHours": ["Mo-Fr 08:00-22:00", "Sa 09:00-23:00", "Su 10:00-21:00"],
+        "priceRange": "$$"
+    }
+    </script>
+{{> head-assets }}
+</head>
+
+<body>
+{{> header }}
+
+    <section class="page-hero" aria-label="Specials banner">
+        <div class="page-hero-bg" aria-hidden="true"></div>
+        <div class="page-hero-overlay" aria-hidden="true"></div>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Chef's <span>Specials</span></h1>
+            <p class="page-hero-subtitle">Premium dishes crafted with passion and the finest ingredients</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right" aria-hidden="true"></i> <span
+                    style="color:var(--gold)">Specials</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Special -->
+    <section class="section specials-hero" aria-label="Featured special">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Today's Highlight</div>
+                <h2 class="section-title">Featured <span>Special</span></h2>
+            </div>
+        <div class="special-featured animate-on-scroll">
+            <div class="special-featured-img"><img
+                    src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80" width="800" height="450"
+                    alt="Grilled Steak Platter featured special" loading="lazy"></div>
+            <div class="special-featured-info">
+                <span class="featured-tag">Chef's Recommendation</span>
+                <h3>Grilled Steak Platter</h3>
+                <p>Prime cut beef steak marinated in our signature herb blend, grilled to perfection, and served
+                    with garlic butter, roasted seasonal vegetables, creamy mashed potatoes, and our house red
+                    wine reduction sauce.</p>
+                <div class="special-price">&#8358;8,500</div>
+                <button class="btn btn-primary" data-add-id="grilled-steak-platter" data-add-name="Grilled Steak Platter" data-add-price="8500"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                </div>
+            </div>
+            <div class="specials-grid">
+                <div class="special-card animate-on-scroll">
+                    <div class="gold-line"></div>
+                    <div class="special-img"><img
+                            src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&q=80" width="600" height="340"
+                            alt="Seafood Medley" loading="lazy"><span class="special-tag">DAILY</span></div>
+                    <div class="special-info">
+                        <h3>Seafood Medley</h3>
+                        <p>Grilled prawns, calamari, and fish fillet with lemon butter sauce and rice</p>
+                        <div class="special-price">&#8358;7,000</div>
+                    </div>
+                </div>
+                <div class="special-card animate-on-scroll">
+                    <div class="gold-line"></div>
+                    <div class="special-img"><img
+                            src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=600&q=80" width="600" height="340"
+                            alt="Gourmet Veggie Bowl" loading="lazy"><span class="special-tag">HEALTHY</span></div>
+                    <div class="special-info">
+                        <h3>Gourmet Veggie Bowl</h3>
+                        <p>Quinoa, roasted vegetables, avocado, and tahini dressing with toasted seeds</p>
+                        <div class="special-price">&#8358;4,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Specials -->
+    <section class="section daily-specials" aria-label="Daily specials by day of week">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Weekly Rotation</div>
+                <h2 class="section-title">Daily <span>Specials</span></h2>
+            </div>
+            <div class="day-tabs animate-on-scroll" role="tablist" aria-label="Day of week">
+                <button class="day-tab active" data-day="monday" role="tab" aria-selected="true">Monday</button>
+                <button class="day-tab" data-day="tuesday" role="tab" aria-selected="false">Tuesday</button>
+                <button class="day-tab" data-day="wednesday" role="tab" aria-selected="false">Wednesday</button>
+                <button class="day-tab" data-day="thursday" role="tab" aria-selected="false">Thursday</button>
+                <button class="day-tab" data-day="friday" role="tab" aria-selected="false">Friday</button>
+                <button class="day-tab" data-day="saturday" role="tab" aria-selected="false">Saturday</button>
+                <button class="day-tab" data-day="sunday" role="tab" aria-selected="false">Sunday</button>
+            </div>
+
+            <div id="monday" class="day-section active" role="tabpanel" aria-label="Monday specials">
+                <div class="specials-grid">
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80" width="600" height="340"
+                                alt="Monday Jollof Feast" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Monday Jollof Feast</h3>
+                            <p>Family-size Jollof Rice with 4 pieces of grilled chicken, plantain, and coleslaw</p>
+                            <div class="special-price">&#8358;6,500</div>
+                        </div>
+                    </div>
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" width="600" height="340"
+                                alt="Free Juice Monday" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Free Juice Monday</h3>
+                            <p>Order any main dish and get a complimentary fresh tropical juice</p>
+                            <div class="special-price">FREE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tuesday" class="day-section" role="tabpanel" aria-label="Tuesday specials">
+                <div class="specials-grid">
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" width="600" height="340"
+                                alt="Pasta Tuesday" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Pasta Tuesday</h3>
+                            <p>Any pasta dish with garlic bread and a side salad at 20% off</p>
+                            <div class="special-price">20% OFF</div>
+                        </div>
+                    </div>
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" width="600" height="340"
+                                alt="Burger and Fries Combo" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Burger & Fries Combo</h3>
+                            <p>Any burger with large fries and a drink</p>
+                            <div class="special-price">&#8358;4,500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wednesday" class="day-section" role="tabpanel" aria-label="Wednesday specials">
+                <div class="specials-grid">
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1524114664604-cd8133cd671e?w=600&q=80" width="600" height="340"
+                                alt="Wing Wednesday" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Wing Wednesday</h3>
+                            <p>10 pieces of spicy chicken wings with dipping sauce</p>
+                            <div class="special-price">&#8358;3,000</div>
+                        </div>
+                    </div>
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1555507036-ab1f403802c7?w=600&q=80" width="600" height="340"
+                                alt="Fresh Bread Wednesday" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Fresh Bread Wednesday</h3>
+                            <p>Buy 2 croissants, get 1 free. Fresh from our bakery</p>
+                            <div class="special-price">B2G1 FREE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="thursday" class="day-section" role="tabpanel" aria-label="Thursday specials">
+                <div class="specials-grid">
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" width="600" height="340"
+                                alt="Steak Thursday" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Steak Thursday</h3>
+                            <p>Any steak dish with a complimentary glass of wine</p>
+                            <div class="special-price">&#8358;7,500</div>
+                        </div>
+                    </div>
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" width="600" height="340"
+                                alt="Soup of the Day" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Soup of the Day</h3>
+                            <p>Chef's special soup with fresh bread rolls</p>
+                            <div class="special-price">&#8358;2,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="friday" class="day-section" role="tabpanel" aria-label="Friday specials">
+                <div class="specials-grid">
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&q=80" width="600" height="340"
+                                alt="Friday Seafood Platter" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Friday Seafood Platter</h3>
+                            <p>Grilled prawns, fish fillet, and calamari with rice and vegetables</p>
+                            <div class="special-price">&#8358;8,000</div>
+                        </div>
+                    </div>
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" width="600" height="340"
+                                alt="Family Pizza Night" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Family Pizza Night</h3>
+                            <p>Large pizza with 2 toppings and 4 soft drinks</p>
+                            <div class="special-price">&#8358;5,500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="saturday" class="day-section" role="tabpanel" aria-label="Saturday specials">
+                <div class="specials-grid">
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=600&q=80" width="600" height="340"
+                                alt="Saturday Brunch" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Saturday Brunch</h3>
+                            <p>Pancakes, eggs, sausages, bacon, and fresh juice</p>
+                            <div class="special-price">&#8358;3,500</div>
+                        </div>
+                    </div>
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" width="600" height="340"
+                                alt="Smoothie Saturday" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Smoothie Saturday</h3>
+                            <p>Any large smoothie at 30% off</p>
+                            <div class="special-price">30% OFF</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sunday" class="day-section" role="tabpanel" aria-label="Sunday specials">
+                <div class="specials-grid">
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?w=600&q=80" width="600" height="340"
+                                alt="Sunday Roast" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Sunday Roast</h3>
+                            <p>Traditional Sunday roast chicken with all the trimmings</p>
+                            <div class="special-price">&#8358;5,000</div>
+                        </div>
+                    </div>
+                    <div class="special-card animate-on-scroll">
+                        <div class="gold-line"></div>
+                        <div class="special-img"><img
+                                src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&q=80" width="600" height="340"
+                                alt="Sunday Dessert Special" loading="lazy"></div>
+                        <div class="special-info">
+                            <h3>Sunday Dessert Special</h3>
+                            <p>Any dessert with a complimentary coffee or tea</p>
+                            <div class="special-price">FREE COFFEE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combo Deals -->
+    <section class="section combo-section" aria-label="Combo deals">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Best Value</div>
+                <h2 class="section-title">Combo <span>Deals</span></h2>
+            </div>
+            <div class="combo-grid">
+                <div class="combo-card animate-on-scroll">
+                    <span class="combo-badge">POPULAR</span>
+                    <div class="combo-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Classic Combo</h3>
+                    <p>Perfect for one hungry person</p>
+                    <div class="combo-price">&#8358;4,500</div>
+                    <div class="combo-save">Save &#8358;1,000</div>
+                    <div class="combo-items">1 Main Dish<br>1 Side<br>1 Drink</div>
+                </div>
+                <div class="combo-card animate-on-scroll">
+                    <span class="combo-badge">BEST VALUE</span>
+                    <div class="combo-icon"><i class="fas fa-users"></i></div>
+                    <h3>Couple's Combo</h3>
+                    <p>Share the love, share the food</p>
+                    <div class="combo-price">&#8358;8,000</div>
+                    <div class="combo-save">Save &#8358;2,500</div>
+                    <div class="combo-items">2 Main Dishes<br>2 Sides<br>2 Drinks<br>1 Dessert</div>
+                </div>
+                <div class="combo-card animate-on-scroll">
+                    <span class="combo-badge">FAMILY</span>
+                    <div class="combo-icon"><i class="fas fa-home"></i></div>
+                    <h3>Family Feast</h3>
+                    <p>Feed the whole family</p>
+                    <div class="combo-price">&#8358;15,000</div>
+                    <div class="combo-save">Save &#8358;5,000</div>
+                    <div class="combo-items">4 Main Dishes<br>4 Sides<br>4 Drinks<br>2 Desserts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{{> footer }}
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

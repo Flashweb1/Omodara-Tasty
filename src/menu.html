@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu | OMODARA TASTY</title>
+    <meta name="description"
+        content="Explore our full menu of local dishes, intercontinental meals, snacks, breads, juices, and burgers at OMODARA TASTY.">
+    <meta name="keywords" content="OMODARA TASTY, restaurant menu, Lagos, Nigerian food, intercontinental meals, fine dining, food delivery, Jollof Rice, gourmet burgers">
+    <meta name="author" content="OMODARA TASTY">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Our Menu | OMODARA TASTY">
+    <meta property="og:description" content="Explore our full menu of local dishes, intercontinental meals, snacks, breads, juices, and burgers at OMODARA TASTY.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omodaratasty.ng/menu.html">
+    <meta property="og:image" content="./img/logo-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Menu | OMODARA TASTY">
+    <meta name="twitter:description" content="Explore our full menu at OMODARA TASTY.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "OMODARA TASTY Menu",
+        "description": "Full menu of local dishes, intercontinental meals, snacks, breads, juices, and burgers.",
+        "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Jollof Rice Special", "offers": { "@type": "Offer", "price": "3500", "priceCurrency": "NGN" } },
+            { "@type": "MenuItem", "name": "Fried Rice Deluxe", "offers": { "@type": "Offer", "price": "3000", "priceCurrency": "NGN" } },
+            { "@type": "MenuItem", "name": "Grilled Steak", "offers": { "@type": "Offer", "price": "8500", "priceCurrency": "NGN" } }
+        ]
+    }
+    </script>
+{{> head-assets }}
+</head>
+
+<body>
+{{> header }}
+
+    <section class="page-hero" aria-label="Menu page banner">
+        <div class="page-hero-bg" aria-hidden="true"></div>
+        <div class="page-hero-overlay" aria-hidden="true"></div>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Our <span>Menu</span></h1>
+            <p class="page-hero-subtitle">A culinary journey through local flavors and global tastes</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right" aria-hidden="true"></i> <span
+                    style="color:var(--gold)">Menu</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--luxury-black)" aria-label="Menu categories">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Browse By Category</div>
+                <h2 class="section-title">Explore Our <span>Delicacies</span></h2>
+            </div>
+
+            <div class="menu-search-container animate-on-scroll">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="menuSearch" placeholder="Search for dishes, ingredients, or keywords...">
+                </div>
+                <div class="dietary-filters">
+                    <label class="diet-checkbox" for="filterSpicy"><input type="checkbox" id="filterSpicy" class="diet-filter-cb" value="Spicy"> <span>Spicy</span></label>
+                    <label class="diet-checkbox" for="filterVegan"><input type="checkbox" id="filterVegan" class="diet-filter-cb" value="Vegan"> <span>Vegan</span></label>
+                    <label class="diet-checkbox" for="filterHealthy"><input type="checkbox" id="filterHealthy" class="diet-filter-cb" value="Healthy"> <span>Healthy</span></label>
+                </div>
+            </div>
+
+            <div class="menu-tabs animate-on-scroll" role="tablist" aria-label="Menu categories">
+                <button class="menu-tab active" data-menu="breakfast" role="tab" aria-selected="true" aria-controls="breakfast">Breakfast & Snacks</button>
+                <button class="menu-tab" data-menu="stews" role="tab" aria-selected="false" aria-controls="stews">Stews & Sauces</button>
+                <button class="menu-tab" data-menu="soups" role="tab" aria-selected="false" aria-controls="soups">Soups & Seafood</button>
+                <button class="menu-tab" data-menu="rice" role="tab" aria-selected="false" aria-controls="rice">Rice & Pasta</button>
+                <button class="menu-tab" data-menu="proteins" role="tab" aria-selected="false" aria-controls="proteins">Proteins & Extras</button>
+                <button class="menu-tab" data-menu="drinks" role="tab" aria-selected="false" aria-controls="drinks">Health Blends</button>
+            </div>
+
+            <!-- Breakfast & Snacks -->
+            <div id="breakfast" class="menu-section active" role="tabpanel">
+                <div class="menu-grid">
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80" width="400" height="250" alt="Akara & Koko" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Akara & Koko Special</h4><span class="menu-item-price">&#8358;3,000</span></div>
+                            <p class="menu-item-desc">Hot, fresh bean cakes served with traditional hot pap.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="akara-koko" data-add-name="Akara & Koko Special" data-add-price="3000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f403802c7?w=400&q=80" width="400" height="250" alt="Moimoi & Koko" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Moimoi & Koko Special</h4><span class="menu-item-price">&#8358;5,000</span></div>
+                            <p class="menu-item-desc">Steamed bean pudding paired with warm traditional pap.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="moimoi-koko" data-add-name="Moimoi & Koko Special" data-add-price="5000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" width="400" height="250" alt="Beans & Koko" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Beans & Koko Special</h4><span class="menu-item-price">&#8358;4,000</span></div>
+                            <p class="menu-item-desc">Soft, savory beans stew paired with breakfast pap.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="beans-koko" data-add-name="Beans & Koko Special" data-add-price="4000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&q=80" width="400" height="250" alt="Apple Cake" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Apple Cake</h4><span class="menu-item-price">&#8358;1,000</span></div>
+                            <p class="menu-item-desc">Freshly baked, moist and sweet apple cake slices.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="apple-cake" data-add-name="Apple Cake" data-add-price="1000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80" width="400" height="250" alt="Burger Chicken" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Burger Chicken</h4><span class="menu-item-price">&#8358;3,000</span></div>
+                            <p class="menu-item-desc">Crispy chicken burger with fresh lettuce and house sauce.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="burger-chicken" data-add-name="Burger Chicken" data-add-price="3000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&q=80" width="400" height="250" alt="Maakouda" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Maakouda</h4><span class="menu-item-price">&#8358;800</span></div>
+                            <p class="menu-item-desc">Crispy fried potato and herb fritters.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="maakouda" data-add-name="Maakouda" data-add-price="800"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stews & Sauces -->
+            <div id="stews" class="menu-section" role="tabpanel">
+                <div class="menu-grid">
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80" width="400" height="250" alt="Beef Stew" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Beef Stew</h4><span class="menu-item-price">&#8358;20,000</span></div>
+                            <select class="variant-select">
+                                <option value="20000" data-name="Beef Stew (1L)">1L - &#8358;20,000</option>
+                                <option value="45000" data-name="Beef Stew (2.5L)">2.5L - &#8358;45,000</option>
+                                <option value="60000" data-name="Beef Stew (3.5L)">3.5L - &#8358;60,000</option>
+                                <option value="75000" data-name="Beef Stew (5L)">5L - &#8358;75,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="beef-stew" data-add-id="beef-stew-1l" data-add-name="Beef Stew (1L)" data-add-price="20000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" width="400" height="250" alt="Turkey Stew" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Turkey Stew</h4><span class="menu-item-price">&#8358;25,000</span></div>
+                            <select class="variant-select">
+                                <option value="25000" data-name="Turkey Stew (1L)">1L - &#8358;25,000</option>
+                                <option value="50000" data-name="Turkey Stew (2.5L)">2.5L - &#8358;50,000</option>
+                                <option value="65000" data-name="Turkey Stew (3.5L)">3.5L - &#8358;65,000</option>
+                                <option value="80000" data-name="Turkey Stew (5L)">5L - &#8358;80,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="turkey-stew" data-add-id="turkey-stew-1l" data-add-name="Turkey Stew (1L)" data-add-price="25000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" width="400" height="250" alt="Assorted Meat Stew" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Assorted Meat Stew</h4><span class="menu-item-price">&#8358;20,000</span></div>
+                            <select class="variant-select">
+                                <option value="20000" data-name="Assorted Meat Stew (1L)">1L - &#8358;20,000</option>
+                                <option value="45000" data-name="Assorted Meat Stew (2.5L)">2.5L - &#8358;45,000</option>
+                                <option value="60000" data-name="Assorted Meat Stew (3.5L)">3.5L - &#8358;60,000</option>
+                                <option value="70000" data-name="Assorted Meat Stew (5L)">5L - &#8358;70,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="assorted-meat-stew" data-add-id="assorted-meat-stew-1l" data-add-name="Assorted Meat Stew (1L)" data-add-price="20000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" width="400" height="250" alt="Ayamase Sauce" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Ayamase Sauce</h4><span class="menu-item-price">&#8358;20,000</span></div>
+                            <select class="variant-select">
+                                <option value="20000" data-name="Ayamase Sauce (1L)">1L - &#8358;20,000</option>
+                                <option value="40000" data-name="Ayamase Sauce (2.5L)">2.5L - &#8358;40,000</option>
+                                <option value="65000" data-name="Ayamase Sauce (3.5L)">3.5L - &#8358;65,000</option>
+                                <option value="80000" data-name="Ayamase Sauce (5L)">5L - &#8358;80,000</option>
+                            </select>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Spicy</span><button class="menu-item-order" data-base-id="ayamase" data-add-id="ayamase-1l" data-add-name="Ayamase Sauce (1L)" data-add-price="20000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1511856715011-82559b561c28?w=400&q=80" width="400" height="250" alt="Snail Sauce" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Snail Sauce</h4><span class="menu-item-price">&#8358;28,000</span></div>
+                            <select class="variant-select">
+                                <option value="28000" data-name="Snail Sauce (1L)">1L - &#8358;28,000</option>
+                                <option value="60000" data-name="Snail Sauce (2.5L)">2.5L - &#8358;60,000</option>
+                                <option value="85000" data-name="Snail Sauce (3.5L)">3.5L - &#8358;85,000</option>
+                            </select>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Premium</span><button class="menu-item-order" data-base-id="snail-sauce" data-add-id="snail-sauce-1l" data-add-name="Snail Sauce (1L)" data-add-price="28000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?w=400&q=80" width="400" height="250" alt="Curry Chicken Sauce" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Curry Chicken Sauce</h4><span class="menu-item-price">&#8358;22,000</span></div>
+                            <select class="variant-select">
+                                <option value="22000" data-name="Curry Chicken Sauce (1L)">1L - &#8358;22,000</option>
+                                <option value="40000" data-name="Curry Chicken Sauce (2.5L)">2.5L - &#8358;40,000</option>
+                                <option value="60000" data-name="Curry Chicken Sauce (3.5L)">3.5L - &#8358;60,000</option>
+                                <option value="80000" data-name="Curry Chicken Sauce (5L)">5L - &#8358;80,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="curry-chicken" data-add-id="curry-chicken-1l" data-add-name="Curry Chicken Sauce (1L)" data-add-price="22000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soups & Seafood -->
+            <div id="soups" class="menu-section" role="tabpanel">
+                <div class="menu-grid">
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1548943487-a2e4b43b485f?w=400&q=80" width="400" height="250" alt="Egusi Soup" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Egusi Soup</h4><span class="menu-item-price">&#8358;20,000</span></div>
+                            <select class="variant-select">
+                                <option value="20000" data-name="Egusi Soup (1L)">1L - &#8358;20,000</option>
+                                <option value="35000" data-name="Egusi Soup (2.5L)">2.5L - &#8358;35,000</option>
+                                <option value="50000" data-name="Egusi Soup (3.5L)">3.5L - &#8358;50,000</option>
+                            </select>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Popular</span><button class="menu-item-order" data-base-id="egusi-soup" data-add-id="egusi-soup-1l" data-add-name="Egusi Soup (1L)" data-add-price="20000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80" width="400" height="250" alt="Eforiro" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Eforiro</h4><span class="menu-item-price">&#8358;22,000</span></div>
+                            <select class="variant-select">
+                                <option value="22000" data-name="Eforiro (1L)">1L - &#8358;22,000</option>
+                                <option value="35000" data-name="Eforiro (2.5L)">2.5L - &#8358;35,000</option>
+                                <option value="50000" data-name="Eforiro (3.5L)">3.5L - &#8358;50,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="eforiro" data-add-id="eforiro-1l" data-add-name="Eforiro (1L)" data-add-price="22000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" width="400" height="250" alt="Okro Soup" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Okro Soup</h4><span class="menu-item-price">&#8358;20,000</span></div>
+                            <select class="variant-select">
+                                <option value="20000" data-name="Okro Soup (1L)">1L - &#8358;20,000</option>
+                                <option value="35000" data-name="Okro Soup (2.5L)">2.5L - &#8358;35,000</option>
+                                <option value="50000" data-name="Okro Soup (3.5L)">3.5L - &#8358;50,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="okro-soup" data-add-id="okro-soup-1l" data-add-name="Okro Soup (1L)" data-add-price="20000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1548943487-a2e4b43b485f?w=400&q=80" width="400" height="250" alt="White Soup" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>White Soup</h4><span class="menu-item-price">&#8358;22,000</span></div>
+                            <select class="variant-select">
+                                <option value="22000" data-name="White Soup (1L)">1L - &#8358;22,000</option>
+                                <option value="35000" data-name="White Soup (2.5L)">2.5L - &#8358;35,000</option>
+                                <option value="50000" data-name="White Soup (3.5L)">3.5L - &#8358;50,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="white-soup" data-add-id="white-soup-1l" data-add-name="White Soup (1L)" data-add-price="22000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=400&q=80" width="400" height="250" alt="Fisherman Soup" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Fisherman Soup</h4><span class="menu-item-price">&#8358;24,000</span></div>
+                            <select class="variant-select">
+                                <option value="24000" data-name="Fisherman Soup (2.5L)">2.5L - &#8358;24,000</option>
+                                <option value="45000" data-name="Fisherman Soup (3.5L)">3.5L - &#8358;45,000</option>
+                                <option value="70000" data-name="Fisherman Soup (5L)">5L - &#8358;70,000</option>
+                            </select>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Seafood</span><button class="menu-item-order" data-base-id="fisherman" data-add-id="fisherman-25l" data-add-name="Fisherman Soup (2.5L)" data-add-price="24000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1511856715011-82559b561c28?w=400&q=80" width="400" height="250" alt="Seafood Pepper Soup" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Seafood Pepper Soup</h4><span class="menu-item-price">&#8358;25,000</span></div>
+                            <select class="variant-select">
+                                <option value="25000" data-name="Seafood Pepper Soup (2.5L)">2.5L - &#8358;25,000</option>
+                                <option value="45000" data-name="Seafood Pepper Soup (3.5L)">3.5L - &#8358;45,000</option>
+                                <option value="70000" data-name="Seafood Pepper Soup (5L)">5L - &#8358;70,000</option>
+                            </select>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Spicy</span><button class="menu-item-order" data-base-id="seafood-pepper" data-add-id="seafood-pepper-25l" data-add-name="Seafood Pepper Soup (2.5L)" data-add-price="25000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rice & Pasta -->
+            <div id="rice" class="menu-section" role="tabpanel">
+                <div class="menu-grid">
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" width="400" height="250" alt="Smoky Party Jollof" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Smoky Party Jollof</h4><span class="menu-item-price">&#8358;15,000</span></div>
+                            <select class="variant-select">
+                                <option value="15000" data-name="Smoky Party Jollof (2.5L)">2.5L - &#8358;15,000</option>
+                                <option value="25000" data-name="Smoky Party Jollof (3.5L)">3.5L - &#8358;25,000</option>
+                                <option value="35000" data-name="Smoky Party Jollof (5L)">5L - &#8358;35,000</option>
+                            </select>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Bestseller</span><button class="menu-item-order" data-base-id="smoky-jollof" data-add-id="smoky-jollof-25l" data-add-name="Smoky Party Jollof (2.5L)" data-add-price="15000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&q=80" width="400" height="250" alt="Oriental Fried Rice" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Oriental Fried Rice</h4><span class="menu-item-price">&#8358;15,000</span></div>
+                            <select class="variant-select">
+                                <option value="15000" data-name="Oriental Fried Rice (2.5L)">2.5L - &#8358;15,000</option>
+                                <option value="25000" data-name="Oriental Fried Rice (3.5L)">3.5L - &#8358;25,000</option>
+                                <option value="35000" data-name="Oriental Fried Rice (5L)">5L - &#8358;35,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="oriental-rice" data-add-id="oriental-rice-25l" data-add-name="Oriental Fried Rice (2.5L)" data-add-price="15000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" width="400" height="250" alt="Jollof + Protein Mix" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Jollof Combo Tray</h4><span class="menu-item-price">&#8358;25,000</span></div>
+                            <select class="variant-select">
+                                <option value="25000" data-name="2.5L Jollof + 5 Protein Mix">2.5L + 5 Proteins - &#8358;25,000</option>
+                                <option value="35000" data-name="3.5L Jollof + 10 Protein Mix">3.5L + 10 Proteins - &#8358;35,000</option>
+                                <option value="50000" data-name="5L Jollof + 15 Protein Mix">5L + 15 Proteins - &#8358;50,000</option>
+                            </select>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Combo</span><button class="menu-item-order" data-base-id="jollof-combo" data-add-id="jollof-combo-25l" data-add-name="2.5L Jollof + 5 Protein Mix" data-add-price="25000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=80" width="400" height="250" alt="Native Pasta" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Native Pasta</h4><span class="menu-item-price">&#8358;17,000</span></div>
+                            <select class="variant-select">
+                                <option value="17000" data-name="Native Pasta (2.5L)">2.5L - &#8358;17,000</option>
+                                <option value="33000" data-name="Native Pasta (3.5L)">3.5L - &#8358;33,000</option>
+                                <option value="42000" data-name="Native Pasta (5L)">5L - &#8358;42,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="native-pasta" data-add-id="native-pasta-25l" data-add-name="Native Pasta (2.5L)" data-add-price="17000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proteins & Extras -->
+            <div id="proteins" class="menu-section" role="tabpanel">
+                <div class="menu-grid">
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?w=400&q=80" width="400" height="250" alt="Grilled Guinea Fowl" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Whole Guinea Fowl</h4><span class="menu-item-price">&#8358;25,000</span></div>
+                            <p class="menu-item-desc">Whole grilled guinea fowl seasoned perfectly.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="guinea-fowl" data-add-name="Whole Grilled Guinea Fowl" data-add-price="25000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1511856715011-82559b561c28?w=400&q=80" width="400" height="250" alt="Sauteed Snail" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Sauteed Snail (10pcs)</h4><span class="menu-item-price">&#8358;45,000</span></div>
+                            <p class="menu-item-desc">Premium jumbo snails in spicy onion and pepper mix.</p>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Premium</span><button class="menu-item-order" data-add-id="sauteed-snail" data-add-name="Sauteed Snail (10pcs)" data-add-price="45000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" width="400" height="250" alt="Peppered Goat Meat" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Peppered Goat Meat</h4><span class="menu-item-price">&#8358;2,000</span></div>
+                            <p class="menu-item-desc">Price per piece. Tender goat meat in spicy sauce.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="peppered-goat" data-add-name="Peppered Goat Meat (1pc)" data-add-price="2000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80" width="400" height="250" alt="Classic Salad" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Classic Salad Tray</h4><span class="menu-item-price">&#8358;12,000</span></div>
+                            <select class="variant-select">
+                                <option value="12000" data-name="Classic Salad (2.5 Tray)">2.5 Tray - &#8358;12,000</option>
+                                <option value="20000" data-name="Classic Salad (Med Tray)">Med Tray - &#8358;20,000</option>
+                            </select>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-base-id="classic-salad" data-add-id="classic-salad-25" data-add-name="Classic Salad (2.5 Tray)" data-add-price="12000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Blends & Drinks -->
+            <div id="drinks" class="menu-section" role="tabpanel">
+                <div class="menu-grid">
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1553530666-ac1dfa27b97c?w=400&q=80" width="400" height="250" alt="Immune Boost" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Immune Boost</h4><span class="menu-item-price">&#8358;5,000</span></div>
+                            <p class="menu-item-desc">Apple, Cucumber, Celery, Ginger, Lemon</p>
+                            <div class="menu-item-meta"><span class="menu-item-tag">Healthy</span><button class="menu-item-order" data-add-id="immune-boost" data-add-name="Immune Boost Blend" data-add-price="5000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80" width="400" height="250" alt="Heart Health" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Heart Health</h4><span class="menu-item-price">&#8358;5,000</span></div>
+                            <p class="menu-item-desc">Papaya, Hemp hearts, Flax seeds</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="heart-health" data-add-name="Heart Health Blend" data-add-price="5000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1553530666-ac1dfa27b97c?w=400&q=80" width="400" height="250" alt="Hormonal Balance" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Hormonal Balance</h4><span class="menu-item-price">&#8358;5,000</span></div>
+                            <p class="menu-item-desc">Pomegranate, Flax seeds, Pumpkin seeds</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="hormonal-balance" data-add-name="Hormonal Balance Blend" data-add-price="5000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                    <div class="menu-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80" width="400" height="250" alt="Tiger Nut Milk" class="menu-item-img" loading="lazy">
+                        <div class="menu-item-info">
+                            <div class="menu-item-header"><h4>Tiger Nut Milk</h4><span class="menu-item-price">&#8358;2,000</span></div>
+                            <p class="menu-item-desc">Pure extract, cold and refreshing.</p>
+                            <div class="menu-item-meta"><button class="menu-item-order" data-add-id="tiger-nut-milk" data-add-name="Tiger Nut Milk Drink" data-add-price="2000"><i class="fas fa-cart-plus"></i> Add to Cart</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Banner -->
+    <section class="section">
+        <div class="container">
+            <div class="catering-banner animate-on-scroll">
+                <h2>Premium Catering Services</h2>
+                <p>Birthday Packages, Home Stocking, Funeral Celebrations, and Corporate Events. Let us bring the OMODARA experience to your special occasions.</p>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Book Our Catering</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu CTA -->
+    <section class="section menu-cta" aria-label="Order now call to action">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <div class="section-label">Can't Decide?</div>
+                <h2 class="section-title">Order Your <span>Favorites</span></h2>
+                <p style="font-size:18px;color:rgba(255,255,255,0.7);margin-bottom:30px">All our dishes are prepared fresh to order. Message us on WhatsApp and we'll help you choose the perfect meal.</p>
+                <a href="#" id="checkoutCta" class="btn btn-primary" style="background-color: #ff4500; border: none;"><i class="fas fa-shopping-bag"></i> Checkout Now</a>
+            </div>
+        </div>
+    </section>
+
+{{> footer }}
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

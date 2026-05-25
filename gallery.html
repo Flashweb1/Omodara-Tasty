@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | OMODARA TASTY</title>
+    <meta name="description"
+        content="Browse our gallery of delicious meals, restaurant ambience, and behind-the-scenes moments at OMODARA TASTY.">
+    <meta name="keywords" content="OMODARA TASTY gallery, restaurant ambience, food photography, fine dining Lagos photos, kitchen behind the scenes">
+    <meta name="author" content="OMODARA TASTY">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Gallery | OMODARA TASTY">
+    <meta property="og:description" content="Browse our gallery of delicious meals, restaurant ambience, and behind-the-scenes moments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omodaratasty.ng/gallery.html">
+    <meta property="og:image" content="./img/logo-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery | OMODARA TASTY">
+    <meta name="twitter:description" content="Browse our gallery of delicious meals and moments.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "OMODARA TASTY",
+        "image": "./img/logo-icon.png",
+        "url": "https://omodaratasty.ng",
+        "telephone": "+2349079490452",
+        "servesCuisine": ["Nigerian", "Intercontinental", "Continental"],
+        "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+        "openingHours": ["Mo-Fr 08:00-22:00", "Sa 09:00-23:00", "Su 10:00-21:00"],
+        "priceRange": "$$"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./img/logo-icon.png">
+
+</head>
+
+<body>
+    <div class="loader" id="loader">
+    <div class="logo-icon"><img src="./img/logo-icon.png" alt="omodara tasty" srcset=""></div>
+    <div class="loader-logo">OMODARA TASTY</div>
+    <div class="loader-bar">
+        <div class="loader-progress"></div>
+    </div>
+</div>
+
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><img src="./img/logo-icon.png" alt="omodara tasty" srcset=""></div>
+            <div class="logo-text">OMODARA <span>TASTY</span></div>
+        </a>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" id="nav-home">Home</a></li>
+                <li><a href="about.html" id="nav-about">About</a></li>
+                <li><a href="menu.html" id="nav-menu">Menu</a></li>
+                <li><a href="specials.html" id="nav-specials">Specials</a></li>
+                <li><a href="gallery.html" id="nav-gallery">Gallery</a></li>
+                <li><a href="contact.html" id="nav-contact">Contact</a></li>
+                <li><a href="#" id="nav-cart" class="nav-cta"><i class="fas fa-shopping-cart"></i> View Cart</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-toggle" id="mobileToggle" role="button" aria-label="Toggle navigation menu" tabindex="0"><span></span><span></span><span></span></div>
+    </div>
+</header>
+
+
+    <section class="page-hero" aria-label="Gallery banner">
+        <div class="page-hero-bg" aria-hidden="true"></div>
+        <div class="page-hero-overlay" aria-hidden="true"></div>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Our <span>Gallery</span></h1>
+            <p class="page-hero-subtitle">A visual feast of flavors, moments, and culinary artistry</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right" aria-hidden="true"></i> <span
+                    style="color:var(--gold)">Gallery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section" style="background:var(--luxury-black)" aria-label="Photo gallery">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Visual Feast</div>
+                <h2 class="section-title">Food & <span>Ambience</span></h2>
+            </div>
+            <div class="gallery-filters animate-on-scroll" role="tablist" aria-label="Gallery filters">
+                <button class="gallery-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="gallery-filter" data-filter="food" role="tab" aria-selected="false">Food</button>
+                <button class="gallery-filter" data-filter="local" role="tab" aria-selected="false">Local Dishes</button>
+                <button class="gallery-filter" data-filter="continental" role="tab" aria-selected="false">Intercontinental</button>
+                <button class="gallery-filter" data-filter="drinks" role="tab" aria-selected="false">Drinks</button>
+                <button class="gallery-filter" data-filter="ambience" role="tab" aria-selected="false">Ambience</button>
+            </div>
+            <div class="gallery-masonry">
+                <div class="gallery-item animate-on-scroll" data-category="local food"><img
+                        src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80" width="600" height="600" alt="Signature Jollof Rice"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Signature Jollof</h4>
+                        <p>Local Dishes</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="food"><img
+                        src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?w=600&q=80" width="600" height="600"
+                        alt="Grilled Chicken dish" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Grilled Perfection</h4>
+                        <p>Main Course</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="food"><img
+                        src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" width="600" height="600"
+                        alt="Gourmet Burger" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Gourmet Burger</h4>
+                        <p>Burgers</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="drinks"><img
+                        src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80" width="600" height="600" alt="Fresh Juice drink"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Tropical Refreshment</h4>
+                        <p>Beverages</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="ambience"><img
+                        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" width="600" height="600"
+                        alt="Restaurant interior" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Elegant Ambience</h4>
+                        <p>Interior</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="food"><img
+                        src="https://images.unsplash.com/photo-1555507036-ab1f403802c7?w=600&q=80" width="600" height="600" alt="Fresh Bakery items"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Fresh Bakery</h4>
+                        <p>Pastries</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="continental food"><img
+                        src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" width="600" height="600" alt="Pasta dish"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Pasta Special</h4>
+                        <p>Intercontinental</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="continental food"><img
+                        src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" width="600" height="600" alt="Prime Steak"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Prime Steak</h4>
+                        <p>Chef's Special</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="local food"><img
+                        src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" width="600" height="600" alt="Beef Suya"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Beef Suya</h4>
+                        <p>Local Snacks</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="drinks"><img
+                        src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" width="600" height="600" alt="Fruit Smoothie"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Fruit Smoothie</h4>
+                        <p>Healthy Drinks</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="ambience"><img
+                        src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" width="600" height="600" alt="Fine dining setup"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Fine Dining</h4>
+                        <p>Experience</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-category="food"><img
+                        src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&q=80" width="600" height="600" alt="Seafood Platter"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Seafood Platter</h4>
+                        <p>Specials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="section instagram-section" aria-label="Instagram feed">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">@omodaratasty</div>
+                <h2 class="section-title">Follow Us on <span>Instagram</span></h2>
+            </div>
+            <div class="instagram-grid">
+                <div class="instagram-item animate-on-scroll"><img
+                        src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" width="400" height="400"
+                        alt="Instagram photo 1" loading="lazy"><i class="fab fa-instagram"></i></div>
+                <div class="instagram-item animate-on-scroll"><img
+                        src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&q=80" width="400" height="400"
+                        alt="Instagram photo 2" loading="lazy"><i class="fab fa-instagram"></i></div>
+                <div class="instagram-item animate-on-scroll"><img
+                        src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80" width="400" height="400"
+                        alt="Instagram photo 3" loading="lazy"><i class="fab fa-instagram"></i></div>
+                <div class="instagram-item animate-on-scroll"><img
+                        src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80" width="400" height="400"
+                        alt="Instagram photo 4" loading="lazy"><i class="fab fa-instagram"></i></div>
+                <div class="instagram-item animate-on-scroll"><img
+                        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" width="400" height="400"
+                        alt="Instagram photo 5" loading="lazy"><i class="fab fa-instagram"></i></div>
+                <div class="instagram-item animate-on-scroll"><img
+                        src="https://images.unsplash.com/photo-1555507036-ab1f403802c7?w=400&q=80" width="400" height="400"
+                        alt="Instagram photo 6" loading="lazy"><i class="fab fa-instagram"></i></div>
+            </div>
+            <div style="text-align:center;margin-top:40px">
+                <a href="https://instagram.com/omodaratasty" target="_blank" class="btn btn-outline" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i> Follow @omodaratasty</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section video-section" aria-label="Kitchen videos">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">Behind The Scenes</div>
+                <h2 class="section-title">Kitchen <span>Stories</span></h2>
+            </div>
+            <div class="video-grid">
+                <div class="video-card animate-on-scroll">
+                    <div class="video-thumb"><img
+                            src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80" width="600" height="338"
+                            alt="Chef cooking in kitchen" loading="lazy">
+                        <div class="video-play" aria-label="Play video"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Chef's Masterclass</h4>
+                        <p>Watch our head chef prepare the perfect Jollof Rice</p>
+                    </div>
+                </div>
+                <div class="video-card animate-on-scroll">
+                    <div class="video-thumb"><img
+                            src="https://images.unsplash.com/photo-1555507036-ab1f403802c7?w=600&q=80" width="600" height="338" alt="Bakery items"
+                            loading="lazy">
+                        <div class="video-play" aria-label="Play video"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Fresh From The Oven</h4>
+                        <p>A day in our bakery making artisan breads</p>
+                    </div>
+                </div>
+                <div class="video-card animate-on-scroll">
+                    <div class="video-thumb"><img
+                            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" width="600" height="338"
+                            alt="Restaurant interior" loading="lazy">
+                        <div class="video-play" aria-label="Play video"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Restaurant Tour</h4>
+                        <p>Take a virtual tour of OMODARA TASTY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-text">OMODARA <span>TASTY</span></div>
+                <p>Where Taste Meets Quality. We serve delicious local and intercontinental meals prepared with passion, freshness, and love. Experience premium dining at its finest.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/omodaratasty" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/omodaratasty" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://tiktok.com/@omodaratasty" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/2349079490452" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <nav class="footer-col" aria-label="Footer Navigation">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Our Menu</a></li>
+                    <li><a href="specials.html"><i class="fas fa-chevron-right"></i> Specials</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <div class="footer-hours">
+                    <p>Monday - Friday <span>8AM - 10PM</span></p>
+                    <p>Saturday <span>9AM - 11PM</span></p>
+                    <p>Sunday <span>10AM - 9PM</span></p>
+                    <p>Holidays <span>10AM - 8PM</span></p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:20px;">Subscribe for exclusive deals, new menu updates, and special offers.</p>
+                <div class="footer-newsletter">
+                    <label for="newsletterEmail" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Email Address</label>
+                    <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Email for newsletter">
+                    <button id="newsletterSubmit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear">2026</span> OMODARA TASTY. All Rights Reserved. <span class="gold-sep">|</span> Crafted with <i class="fas fa-heart" style="color:var(--gold);"></i> in Nigeria</p>
+        </div>
+    </div>
+</footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
