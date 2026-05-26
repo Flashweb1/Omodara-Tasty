@@ -14,7 +14,7 @@
     <meta property="og:description" content="Experience premium local and intercontinental dining. Order delicious meals for delivery in Lagos.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://omodaratasty.ng">
-    <meta property="og:image" content="./img/logo-icon.png">
+    <meta property="og:image" content="./Img/logo-icon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="OMODARA TASTY - Premium Dining Experience">
     <meta name="twitter:description" content="Experience premium local and intercontinental dining. Order delicious meals for delivery in Lagos.">
@@ -23,7 +23,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "OMODARA TASTY",
-        "image": "./img/logo-icon.png",
+        "image": "/img/logo-icon.png",
         "url": "https://omodaratasty.ng",
         "telephone": "+2349079490452",
         "servesCuisine": ["Nigerian", "Intercontinental", "Continental"],
@@ -38,18 +38,36 @@
 <body>
 {{> header }}
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero" aria-label="Hero banner">
-        <div class="hero-bg" aria-hidden="true"></div>
+    <!-- Hero Section with Auto-Slider -->
+    <section class="hero" id="hero" aria-label="Hero banner with rotating food images">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="./img/25440a1fc0328b5231a899a5973611a5f0120a0e3725f942dbf4e0869c7a44c9.png" alt="Signature Jollof Rice" width="1200" height="600" loading="eager">
+                <div class="hero-slide-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="./img/1bc31d339d1e966f2ccdfe7812a4b9f171e43ad2944ee429d6648853c7acda02.png" alt="Premium Beef Suya" width="1200" height="600" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+            </div>
+            <div class="hero-slide">
+                <img src="./img/4f97762500efc3d886c0a03661fb02177cdcbbd0b5556f2c5525b8f8190b0fca.png" alt="Authentic Egusi Soup" width="1200" height="600" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+            </div>
+        </div>
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="hero-badge animate-on-scroll">Premium Dining Experience</div>
-            <h1 class="hero-title animate-on-scroll">Where <span>Taste</span><br>Meets <span>Quality</span></h1>
+            <h1 class="hero-title animate-on-scroll">Where <span class="gold-text">Taste</span><br>Meets <span class="gold-text">Quality</span></h1>
             <p class="hero-subtitle animate-on-scroll">Discover the finest local and intercontinental cuisine, crafted with
                 passion and served with love.</p>
             <div class="hero-actions animate-on-scroll">
                 <a href="menu.html" class="btn btn-primary" aria-label="View our menu">Explore Our Menu</a>
             </div>
+        </div>
+        <div class="hero-slider-controls" aria-label="Slider controls">
+            <button class="slider-dot active" data-slide="0" aria-label="Show slide 1" aria-pressed="true"></button>
+            <button class="slider-dot" data-slide="1" aria-label="Show slide 2" aria-pressed="false"></button>
+            <button class="slider-dot" data-slide="2" aria-label="Show slide 3" aria-pressed="false"></button>
         </div>
         <div class="hero-scroll-indicator animate-on-scroll" aria-hidden="true">
             <span>Scroll</span>
@@ -112,7 +130,7 @@
         <div class="container">
             <div class="signature-grid">
                 <div class="signature-image animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=800&q=80"
+                    <img src="./Img/1bc31d339d1e966f2ccdfe7812a4b9f171e43ad2944ee429d6648853c7acda02.png"
                         alt="Signature Jollof Rice - Our bestselling dish" width="800" height="533" loading="lazy">
                     <div class="signature-badge" aria-hidden="true">Bestseller</div>
                 </div>

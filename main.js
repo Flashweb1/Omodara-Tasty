@@ -17,9 +17,17 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
 const db = getFirestore(app);
 const auth = getAuth(app);
+
+const PAYSTACK_PUBLIC_KEY = 'pk_test_YOUR_PAYSTACK_PUBLIC_KEY_HERE';
+const EMAILJS_CONFIG = {
+    SERVICE_ID: 'YOUR_SERVICE_ID',
+    TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
+    PUBLIC_KEY: 'REPLACE_WITH_YOUR_EMAILJS_PUBLIC_KEY'
+};
+
 const googleProvider = new GoogleAuthProvider();
 
 const APP_CONFIG = {
@@ -83,6 +91,97 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===== Event Binding =====
+    // Hero Slider Auto-Rotate with Touch Support
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const totalSlides = slides.length;
+    let autoRotateInterval;
+    let touchStartX = 0;
+
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach((dot, idx) => {
+            dot.classList.remove('active');
+            dot.setAttribute('aria-pressed', idx === n);
+        });
+        
+        slides[n].classList.add('active');
+        dots[n].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    function resetAutoRotate() {
+        clearInterval(autoRotateInterval);
+        // Using 6 seconds for a more relaxed, premium feel
+        autoRotateInterval = setInterval(nextSlide, 6000);
+    }
+
+    // Auto-rotate every 5 seconds
+    autoRotateInterval = setInterval(nextSlide, 6000);
+
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            resetAutoRotate();
+        });
+
+        // Keyboard support for accessibility
+        dot.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+                resetAutoRotate();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+                resetAutoRotate();
+            }
+        });
+    });
+
+    // Touch swipe support for mobile
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        heroSlider.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        }, false);
+
+        heroSlider.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+                resetAutoRotate();
+            }
+        }, false);
+
+        // Pause auto-rotation on hover (desktop)
+        heroSlider.addEventListener('mouseenter', () => {
+            clearInterval(autoRotateInterval);
+        });
+
+        heroSlider.addEventListener('mouseleave', () => {
+            resetAutoRotate();
+        });
+    }
+
     // Nav cart
     const navCart = document.getElementById('nav-cart');
     if (navCart) {
@@ -212,9 +311,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailJsScript = document.createElement('script');
     emailJsScript.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
     emailJsScript.onload = () => {
-        const emailJsPublicKey = 'REPLACE_WITH_YOUR_EMAILJS_PUBLIC_KEY';
-        if (typeof emailjs !== 'undefined' && emailjs.init && emailJsPublicKey !== 'REPLACE_WITH_YOUR_EMAILJS_PUBLIC_KEY') {
-            emailjs.init(emailJsPublicKey);
+        if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.PUBLIC_KEY !== 'REPLACE_WITH_YOUR_EMAILJS_PUBLIC_KEY') {
+            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
         } else {
             console.warn('EmailJS public key is not configured. Email features will remain disabled.');
         }
@@ -763,13 +861,13 @@ function processOrder(event) {
     };
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     if (customer.payMethod === 'online') {
-        if (typeof PaystackPop === 'undefined' || !PaystackPop.setup) {
+        if (typeof PaystackPop === 'undefined' || PAYSTACK_PUBLIC_KEY.includes('YOUR_PAYSTACK')) {
             showToast("Payment gateway loading, please try again in a moment.", "info");
             toggleCheckoutLoading(false);
             return;
         }
         let handler = PaystackPop.setup({
-            key: 'pk_test_YOUR_PAYSTACK_PUBLIC_KEY_HERE',
+            key: PAYSTACK_PUBLIC_KEY,
             email: customer.email,
             amount: total * 100,
             currency: 'NGN',
@@ -818,8 +916,8 @@ async function completeOrder(customer, total, reference) {
     } catch (error) {
         console.error("Error saving order: ", error);
     }
-    if (typeof emailjs !== 'undefined') {
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.SERVICE_ID !== 'YOUR_SERVICE_ID') {
+        emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
             .then(function () {
                 showToast(`Order placed successfully! Reference: ${reference}. An email receipt has been sent.`, 'success');
                 cart = []; saveCart(); updateCartUI(); closeCheckout();
