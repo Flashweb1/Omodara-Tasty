@@ -242,10 +242,12 @@ body.page-transitioning {
     to { opacity: 1; }
 }
 @keyframes pageExit {
-    from { opacity: 1; 
-    to { opacity: 0; 
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
 
-
+.loader {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -598,7 +600,8 @@ body.page-transitioning {
     width: 100%;
     height: 100%;
     background: #1a1a1a url(/img/12f61069b54e53d7818873089d9ab56e0c0a0f03491aa24a371d82635d14381f.png) center/cover no-repeat fixed;
-    filter: brig
+    filter: brightness(0.6);
+}
 
 @media (max-width: 1024px) {
     .page-hero-bg, .cta-section {
@@ -2990,9 +2993,10 @@ body.page-transitioning {
 }
 
 .about-mv {
-    background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('/img/12f61069b54e53d7818873089d9ab56e0c0a0f03491aa24a371d82635d14381f.png') center/cover fixed;
+    background: linear-gradient(rgba(15, 15, 15, 0.88), rgba(15, 15, 15, 0.88)), url('/img/12f61069b54e53d7818873089d9ab56e0c0a0f03491aa24a371d82635d14381f.png') center/cover fixed;
 }
 
+.story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
