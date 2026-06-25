@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 // Import your CSS file here if using a module bundler (Vite, Webpack, etc.)
 // import './styles.css';
@@ -426,6 +426,58 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast('Signed out successfully', 'success');
     });
 
+    // Dedicated Login Page Handler
+    const loginPageForm = document.getElementById('loginPageForm');
+    if (loginPageForm) {
+        loginPageForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const pass = document.getElementById('loginPassword').value;
+            try {
+                await signInWithEmailAndPassword(auth, email, pass);
+                showToast("Welcome back!", "success");
+                window.location.href = 'index.html';
+            } catch (error) {
+                handleAuthError(error);
+            }
+        });
+    }
+
+    // Dedicated Signup Page Handler
+    const signupPageForm = document.getElementById('signupPageForm');
+    if (signupPageForm) {
+        signupPageForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const pass = document.getElementById('signupPassword').value;
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, pass);
+                await updateProfile(userCredential.user, { displayName: name });
+                showToast("Account created successfully!", "success");
+                window.location.href = 'index.html';
+            } catch (error) {
+                handleAuthError(error);
+            }
+        });
+    }
+
+    // Shared Google Auth for dedicated pages
+    const googleAuthBtns = ['googleLoginBtn', 'googleSignupBtn'];
+    googleAuthBtns.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+            btn.onclick = async () => {
+                try {
+                    await signInWithPopup(auth, googleProvider);
+                    window.location.href = 'index.html';
+                } catch (error) {
+                    handleAuthError(error);
+                }
+            };
+        }
+    });
+
     let currentUser = null;
 
     // Auth State Observer
@@ -447,7 +499,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 authBtn.onclick = (e) => { e.preventDefault(); openProfile(); };
             } else {
                 authBtn.innerHTML = `<i class="fas fa-user"></i> Login`;
-                authBtn.onclick = (e) => { e.preventDefault(); signInWithPopup(auth, googleProvider); };
+                authBtn.onclick = (e) => { 
+                    e.preventDefault(); 
+                    window.location.href = 'login.html';
+                };
             }
         }
     });
@@ -493,6 +548,20 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(error);
             historyList.innerHTML = '<p style="color: rgba(255,100,100,0.8);">Failed to load orders.</p>';
         }
+    }
+
+    function handleAuthError(error) {
+        let message = "Authentication failed. Please try again.";
+        if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+            message = "Invalid email or password.";
+        } else if (error.code === 'auth/email-already-in-use') {
+            message = "This email is already registered.";
+        } else if (error.code === 'auth/weak-password') {
+            message = "Password should be at least 6 characters.";
+        } else if (error.code === 'auth/popup-closed-by-user') {
+            return; // Silent return for user cancellation
+        }
+        showToast(message, "error");
     }
 
     // Initialize Search & Filter if on Menu page
@@ -852,6 +921,12 @@ function toggleCheckoutLoading(isLoading) {
 function processOrder(event) {
     event.preventDefault();
     toggleCheckoutLoading(true);
+    
+    if (cart.length === 0) {
+        showToast("Your cart is empty!", "error");
+        return;
+    }
+
     const customer = {
         name: document.getElementById('custName').value,
         email: document.getElementById('custEmail').value,

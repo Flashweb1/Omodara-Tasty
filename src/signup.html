@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | OMODARA TASTY</title>
+{{> head-assets }}
+</head>
+<body>
+{{> header }}
+    <section class="page-hero" style="min-height: 40vh;">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Create <span>Account</span></h1>
+        </div>
+    </section>
+
+    <section class="section" style="margin-top: -100px; z-index: 10; position: relative;">
+        <div class="container">
+            <div class="checkout-content" style="margin: 0 auto; max-width: 450px; background: rgba(15, 15, 15, 0.95); backdrop-filter: blur(10px);">
+                <form id="signupPageForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="signupName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="signupEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="signupPassword" required placeholder="Minimum 6 characters">
+                    </div>
+                    <button type="submit" class="place-order-btn">Create Account</button>
+                </form>
+                
+                <div style="text-align: center; margin: 20px 0; color: rgba(255,255,255,0.5);">OR</div>
+                
+                <button id="googleSignupBtn" class="btn btn-outline" style="width: 100%; justify-content: center; gap: 10px;">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/action/google.svg" width="18" alt="Google">
+                    Sign up with Google
+                </button>
+
+                <p style="text-align: center; margin-top: 25px; font-size: 14px; color: rgba(255,255,255,0.7);">
+                    Already have an account? <a href="login.html" style="color: var(--gold); font-weight: 600;">Login</a>
+                </p>
+            </div>
+        </div>
+    </section>
+{{> footer }}
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
