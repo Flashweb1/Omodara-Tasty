@@ -1006,3 +1006,279 @@ async function completeOrder(customer, total, reference) {
         cart = []; saveCart(); updateCartUI(); closeCheckout();
     }
 }
+
+// ==========================================
+// AI MENU ASSISTANT
+// ==========================================
+const MENU_DATA = {
+    business: {
+        name: "OMODARA TASTY",
+        phone: "+234 907 949 0452",
+        location: "Lagos, Nigeria",
+        hours: "Mon-Fri 8AM-10PM, Sat 9AM-11PM, Sun 10AM-9PM",
+        delivery: "Delivery available across Lagos. Order via website cart or WhatsApp."
+    },
+    categories: {
+        breakfast: {
+            label: "Breakfast & Snacks",
+            items: [
+                { name: "Akara & Koko Special", price: "₦3,000", desc: "Hot, fresh bean cakes served with traditional hot pap.", tags: ["vegan"] },
+                { name: "Moimoi & Koko Special", price: "₦5,000", desc: "Steamed bean pudding paired with warm traditional pap." },
+                { name: "Beans & Koko Special", price: "₦4,000", desc: "Soft, savory beans stew paired with breakfast pap.", tags: ["vegan"] },
+                { name: "Apple Cake", price: "₦1,000", desc: "Freshly baked, moist and sweet apple cake slices." },
+                { name: "Burger Chicken", price: "₦3,000", desc: "Crispy chicken burger with fresh lettuce and house sauce." },
+                { name: "Maakouda", price: "₦800", desc: "Crispy fried potato and herb fritters.", tags: ["vegan"] }
+            ]
+        },
+        stews: {
+            label: "Stews & Sauces",
+            items: [
+                { name: "Beef Stew", price: "₦20,000 (1L) – ₦75,000 (5L)", desc: "Rich, slow-cooked beef in tomato and pepper sauce." },
+                { name: "Turkey Stew", price: "₦25,000 (1L) – ₦80,000 (5L)", desc: "Premium turkey slow-cooked in savory pepper sauce." },
+                { name: "Assorted Meat Stew", price: "₦20,000 (1L) – ₦70,000 (5L)", desc: "Mixed meat stew with assorted cuts." },
+                { name: "Ayamase Sauce", price: "₦20,000 (1L) – ₦80,000 (5L)", desc: "Designer green pepper sauce (ofada style).", tags: ["spicy"] },
+                { name: "Snail Sauce", price: "₦28,000 (1L) – ₦85,000 (3.5L)", desc: "Premium jumbo snails in spicy sauce.", tags: ["premium"] },
+                { name: "Curry Chicken Sauce", price: "₦22,000 (1L) – ₦80,000 (5L)", desc: "Mild curry-infused chicken sauce." }
+            ]
+        },
+        soups: {
+            label: "Soups & Seafood",
+            items: [
+                { name: "Egusi Soup", price: "₦20,000 (1L) – ₦50,000 (3.5L)", desc: "Rich melon seed soup, a Nigerian classic.", tags: ["popular"] },
+                { name: "Eforiro", price: "₦22,000 (1L) – ₦50,000 (3.5L)", desc: "Fresh vegetable soup cooked with assorted meat." },
+                { name: "Okro Soup", price: "₦20,000 (1L) – ₦50,000 (3.5L)", desc: "Smooth okro soup with assorted fish and meat." },
+                { name: "White Soup", price: "₦22,000 (1L) – ₦50,000 (3.5L)", desc: "Traditional Southeast Nigerian soup with a unique flavor." },
+                { name: "Fisherman Soup", price: "₦24,000 (2.5L) – ₦70,000 (5L)", desc: "Rich seafood soup with fresh catch.", tags: ["seafood"] },
+                { name: "Seafood Pepper Soup", price: "₦25,000 (2.5L) – ₦70,000 (5L)", desc: "Spicy pepper soup loaded with seafood.", tags: ["spicy", "seafood"] }
+            ]
+        },
+        rice: {
+            label: "Rice & Pasta",
+            items: [
+                { name: "Smoky Party Jollof", price: "₦15,000 (2.5L) – ₦35,000 (5L)", desc: "Our signature party jollof rice — smoky, rich, and delicious.", tags: ["bestseller", "popular"] },
+                { name: "Oriental Fried Rice", price: "₦15,000 (2.5L) – ₦35,000 (5L)", desc: "Stir-fried rice with vegetables and seasonings." },
+                { name: "Jollof Combo Tray", price: "₦25,000 (2.5L + 5 proteins) – ₦50,000 (5L + 15 proteins)", desc: "Jollof rice with assorted protein mix.", tags: ["combo", "popular"] },
+                { name: "Native Pasta", price: "₦17,000 (2.5L) – ₦42,000 (5L)", desc: "Locally-inspired pasta with Nigerian flavors." }
+            ]
+        },
+        proteins: {
+            label: "Proteins & Extras",
+            items: [
+                { name: "Whole Guinea Fowl", price: "₦25,000", desc: "Whole grilled guinea fowl seasoned perfectly." },
+                { name: "Sauteed Snail (10pcs)", price: "₦45,000", desc: "Premium jumbo snails in spicy onion and pepper mix.", tags: ["premium"] },
+                { name: "Peppered Goat Meat", price: "₦2,000/pc", desc: "Tender goat meat in spicy sauce.", tags: ["spicy"] },
+                { name: "Classic Salad Tray", price: "₦12,000 (2.5 tray) – ₦20,000 (med tray)", desc: "Fresh mixed salad with dressing." }
+            ]
+        },
+        drinks: {
+            label: "Health Blends",
+            items: [
+                { name: "Immune Boost", price: "₦5,000", desc: "Apple, Cucumber, Celery, Ginger, Lemon.", tags: ["healthy"] },
+                { name: "Heart Health", price: "₦5,000", desc: "Papaya, Hemp hearts, Flax seeds.", tags: ["healthy"] },
+                { name: "Hormonal Balance", price: "₦5,000", desc: "Pomegranate, Flax seeds, Pumpkin seeds.", tags: ["healthy"] },
+                { name: "Tiger Nut Milk", price: "₦2,000", desc: "Pure extract, cold and refreshing.", tags: ["healthy"] }
+            ]
+        }
+    },
+    specials: [
+        { day: "Monday", name: "Monday Jollof Feast", price: "₦6,500", desc: "Family-size Jollof Rice with 4 pieces of grilled chicken, plantain, and coleslaw." },
+        { day: "Monday", name: "Free Juice Monday", price: "FREE", desc: "Order any main dish and get a complimentary fresh tropical juice." },
+        { day: "Tuesday", name: "Pasta Tuesday", price: "20% OFF", desc: "Any pasta dish with garlic bread and a side salad." },
+        { day: "Tuesday", name: "Burger & Fries Combo", price: "₦4,500", desc: "Any burger with large fries and a drink." },
+        { day: "Wednesday", name: "Wing Wednesday", price: "₦3,000", desc: "10 pieces of spicy chicken wings with dipping sauce." },
+        { day: "Wednesday", name: "Fresh Bread Wednesday", price: "B2G1 FREE", desc: "Buy 2 croissants, get 1 free." },
+        { day: "Thursday", name: "Steak Thursday", price: "₦7,500", desc: "Any steak dish with a complimentary glass of wine." },
+        { day: "Thursday", name: "Soup of the Day", price: "₦2,000", desc: "Chef's special soup with fresh bread rolls." },
+        { day: "Friday", name: "Friday Seafood Platter", price: "₦8,000", desc: "Grilled prawns, fish fillet, and calamari with rice." },
+        { day: "Friday", name: "Family Pizza Night", price: "₦5,500", desc: "Large pizza with 2 toppings and 4 soft drinks." },
+        { day: "Saturday", name: "Saturday Brunch", price: "₦3,500", desc: "Pancakes, eggs, sausages, bacon, and fresh juice." },
+        { day: "Saturday", name: "Smoothie Saturday", price: "30% OFF", desc: "Any large smoothie at 30% off." },
+        { day: "Sunday", name: "Sunday Roast", price: "₦5,000", desc: "Traditional Sunday roast chicken with all the trimmings." },
+        { day: "Sunday", name: "Sunday Dessert Special", price: "FREE COFFEE", desc: "Any dessert with a complimentary coffee or tea." }
+    ]
+};
+
+const AI_CONFIG = {
+    API_KEY: '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',
+    MODEL: 'openrouter/free',
+    SITE_URL: 'https://omodaratasty.ng',
+    SITE_NAME: 'OMODARA TASTY'
+};
+
+function buildSystemPrompt() {
+    let prompt = `You are OMODARA TASTY's friendly AI menu assistant. You help customers with menu questions, food recommendations, and information about the restaurant.
+
+RULES:
+- Only answer based on the menu provided below. Never make up dishes or prices.
+- Be warm, concise, and helpful. Keep responses under 120 words unless the user asks for details.
+- When recommending, consider: budget, spice preference, group size, meal time, dietary needs.
+- Include prices when mentioning items.
+- If asked about availability or ingredients, use the descriptions provided.
+- If asked something outside the restaurant's scope, politely redirect to the menu.
+- If the user wants to order, guide them to use the "Add to Cart" buttons on the website menu page.
+- If they need help beyond what you can offer, suggest they call or WhatsApp the restaurant.
+
+HOURS: ${MENU_DATA.business.hours}
+PHONE: ${MENU_DATA.business.phone}
+LOCATION: ${MENU_DATA.business.location}
+DELIVERY: ${MENU_DATA.business.delivery}
+
+MENU ITEMS:\n`;
+
+    for (const key in MENU_DATA.categories) {
+        const cat = MENU_DATA.categories[key];
+        prompt += `\n--- ${cat.label} ---\n`;
+        cat.items.forEach(item => {
+            prompt += `- ${item.name} | ${item.price} | ${item.desc}`;
+            if (item.tags && item.tags.length) prompt += ` [${item.tags.join(', ')}]`;
+            prompt += '\n';
+        });
+    }
+
+    prompt += `\n--- DAILY SPECIALS ---\n`;
+    MENU_DATA.specials.forEach(s => {
+        prompt += `- ${s.day}: ${s.name} | ${s.price} | ${s.desc}\n`;
+    });
+
+    return prompt;
+}
+
+function initAIChat() {
+    if (document.getElementById('aiChatPanel')) return;
+
+    const trigger = document.createElement('button');
+    trigger.id = 'aiChatTrigger';
+    trigger.className = 'ai-chat-trigger';
+    trigger.setAttribute('aria-label', 'Open AI Menu Assistant');
+    trigger.innerHTML = '<i class="fas fa-robot"></i><span class="trigger-label">Menu Assistant</span>';
+
+    const panel = document.createElement('div');
+    panel.id = 'aiChatPanel';
+    panel.className = 'ai-chat-panel';
+    panel.innerHTML = `
+        <div class="ai-chat-header">
+            <div class="ai-chat-header-icon"><i class="fas fa-robot"></i></div>
+            <div class="ai-chat-header-info">
+                <h4>OMODARA TASTY</h4>
+                <p>Menu Assistant</p>
+            </div>
+            <button class="ai-chat-close" id="aiChatClose" aria-label="Close chat">&times;</button>
+        </div>
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="ai-msg bot">
+                Hey there! 👋 Ask me anything about our menu — I can help with recommendations, prices, ingredients, and daily specials!
+                <div class="ai-msg-time">Just now</div>
+            </div>
+        </div>
+        <div class="ai-chat-input">
+            <input type="text" id="aiChatInput" placeholder="Ask about our menu..." autocomplete="off">
+            <button class="ai-chat-send" id="aiChatSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    `;
+
+    document.body.appendChild(trigger);
+    document.body.appendChild(panel);
+
+    let chatHistory = [];
+    let isProcessing = false;
+
+    function addMessage(text, role, time) {
+        const msgs = document.getElementById('aiChatMessages');
+        const div = document.createElement('div');
+        div.className = `ai-msg ${role}`;
+        div.innerHTML = `${text}<div class="ai-msg-time">${time || 'Just now'}</div>`;
+        msgs.appendChild(div);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function showTyping() {
+        const msgs = document.getElementById('aiChatMessages');
+        const div = document.createElement('div');
+        div.className = 'ai-typing';
+        div.id = 'aiTypingIndicator';
+        div.innerHTML = '<span></span><span></span><span></span>';
+        msgs.appendChild(div);
+        msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function hideTyping() {
+        const el = document.getElementById('aiTypingIndicator');
+        if (el) el.remove();
+    }
+
+    async function sendToAI(userMessage) {
+        const systemPrompt = buildSystemPrompt();
+        chatHistory.push({ role: 'user', content: userMessage });
+
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            ...chatHistory.slice(-12)
+        ];
+
+        try {
+            const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${AI_CONFIG.API_KEY}`,
+                    'HTTP-Referer': AI_CONFIG.SITE_URL,
+                    'X-Title': AI_CONFIG.SITE_NAME
+                },
+                body: JSON.stringify({
+                    model: AI_CONFIG.MODEL,
+                    messages: messages,
+                    max_tokens: 300,
+                    temperature: 0.7
+                })
+            });
+
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+            const data = await res.json();
+            const reply = data.choices?.[0]?.message?.content || "I'm not sure how to answer that. Could you rephrase?";
+            chatHistory.push({ role: 'assistant', content: reply });
+            return reply;
+        } catch (err) {
+            console.error('AI Chat error:', err);
+            return "I'm having trouble connecting right now. Please reach out to us on WhatsApp at +234 907 949 0452 and we'll be happy to help!";
+        }
+    }
+
+    async function handleSend() {
+        const input = document.getElementById('aiChatInput');
+        const msg = input.value.trim();
+        if (!msg || isProcessing) return;
+
+        isProcessing = true;
+        input.value = '';
+        document.getElementById('aiChatSend').disabled = true;
+
+        addMessage(msg, 'user', 'Now');
+        showTyping();
+
+        const reply = await sendToAI(msg);
+
+        hideTyping();
+        addMessage(reply, 'bot');
+        isProcessing = false;
+        document.getElementById('aiChatSend').disabled = false;
+        input.focus();
+    }
+
+    document.getElementById('aiChatTrigger').addEventListener('click', () => {
+        document.getElementById('aiChatPanel').classList.toggle('active');
+        document.getElementById('aiChatInput').focus();
+    });
+
+    document.getElementById('aiChatClose').addEventListener('click', () => {
+        document.getElementById('aiChatPanel').classList.remove('active');
+    });
+
+    document.getElementById('aiChatSend').addEventListener('click', handleSend);
+
+    document.getElementById('aiChatInput').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleSend();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initAIChat);
